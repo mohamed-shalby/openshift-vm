@@ -1,94 +1,17 @@
-﻿apiVersion: kubevirt.io/v1
+apiVersion: kubevirt.io/v1
 kind: VirtualMachine
 metadata:
-  annotations:
-    kubemacpool.io/transaction-timestamp: '2025-08-09T12:22:32.63214804Z'
-    vm.kubevirt.io/validations: |
-      [
-        {
-          "name": "minimal-required-memory",
-          "path": "jsonpath::.spec.domain.memory.guest",
-          "rule": "integer",
-          "message": "This VM requires more memory.",
-          "min": 1610612736
-        }
-      ]
-  creationTimestamp: '2025-08-09T12:22:32Z'
-  generation: 1
-  labels:
-    app: centos-stream9-chocolate-elk-26
-    kubevirt.io/dynamic-credentials-support: 'true'
-    vm.kubevirt.io/template: centos-stream9-server-small
-    vm.kubevirt.io/template.namespace: openshift
-    vm.kubevirt.io/template.revision: '1'
-    vm.kubevirt.io/template.version: v0.29.4
-  managedFields:
-    - apiVersion: kubevirt.io/v1
-      fieldsType: FieldsV1
-      fieldsV1:
-        'f:metadata':
-          'f:annotations':
-            .: {}
-            'f:vm.kubevirt.io/validations': {}
-          'f:labels':
-            .: {}
-            'f:app': {}
-            'f:kubevirt.io/dynamic-credentials-support': {}
-            'f:vm.kubevirt.io/template': {}
-            'f:vm.kubevirt.io/template.namespace': {}
-            'f:vm.kubevirt.io/template.revision': {}
-            'f:vm.kubevirt.io/template.version': {}
-        'f:spec':
-          .: {}
-          'f:dataVolumeTemplates': {}
-          'f:running': {}
-          'f:template':
-            .: {}
-            'f:metadata':
-              .: {}
-              'f:annotations':
-                .: {}
-                'f:vm.kubevirt.io/flavor': {}
-                'f:vm.kubevirt.io/os': {}
-                'f:vm.kubevirt.io/workload': {}
-              'f:labels':
-                .: {}
-                'f:kubevirt.io/domain': {}
-                'f:kubevirt.io/size': {}
-            'f:spec':
-              .: {}
-              'f:architecture': {}
-              'f:domain':
-                .: {}
-                'f:cpu':
-                  .: {}
-                  'f:cores': {}
-                  'f:sockets': {}
-                  'f:threads': {}
-                'f:devices':
-                  .: {}
-                  'f:disks': {}
-                  'f:interfaces': {}
-                  'f:rng': {}
-                'f:memory':
-                  .: {}
-                  'f:guest': {}
-              'f:networks': {}
-              'f:terminationGracePeriodSeconds': {}
-              'f:volumes': {}
-      manager: kubectl-create
-      operation: Update
-      time: '2025-08-09T12:22:32Z'
-  name: centos-stream9-chocolate-elk-26
+  name: centos-stream9-maroon-buzzard-85
   namespace: vms-project
-  uid: 38c01ebb-875d-40d9-9a59-42f672073da0
+  labels:
+    app: centos-stream9-maroon-buzzard-85
+    kubevirt.io/dynamic-credentials-support: 'true'
 spec:
   dataVolumeTemplates:
     - apiVersion: cdi.kubevirt.io/v1beta1
       kind: DataVolume
       metadata:
-        creationTimestamp: null
-        name: centos-stream9-chocolate-elk-26
+        name: centos-stream9-maroon-buzzard-85
       spec:
         sourceRef:
           kind: DataSource
@@ -105,9 +28,8 @@ spec:
         vm.kubevirt.io/flavor: small
         vm.kubevirt.io/os: centos-stream9
         vm.kubevirt.io/workload: server
-      creationTimestamp: null
       labels:
-        kubevirt.io/domain: centos-stream9-chocolate-elk-26
+        kubevirt.io/domain: centos-stream9-maroon-buzzard-85
         kubevirt.io/size: small
     spec:
       architecture: amd64
@@ -125,7 +47,7 @@ spec:
                 bus: virtio
               name: cloudinitdisk
           interfaces:
-            - macAddress: '02:cd:9e:00:00:01'
+            - macAddress: '02:cd:9e:00:00:03'
               masquerade: {}
               model: virtio
               name: default
@@ -134,19 +56,18 @@ spec:
           type: pc-q35-rhel9.4.0
         memory:
           guest: 2Gi
-        resources: {}
       networks:
         - name: default
           pod: {}
       terminationGracePeriodSeconds: 180
       volumes:
         - dataVolume:
-            name: centos-stream9-chocolate-elk-26
+            name: centos-stream9-maroon-buzzard-85
           name: rootdisk
         - cloudInitNoCloud:
             userData: |-
               #cloud-config
               user: centos
-              password: 5ext-6sd8-ie78
+              password: s7ay-3fd2-4qtc
               chpasswd: { expire: False }
           name: cloudinitdisk
