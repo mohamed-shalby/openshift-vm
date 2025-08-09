@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: fedora-vm
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/your-repo/vm-manifests.git'  # Replace with your repo
+    path: path/to/vm-manifest.yaml  # Path to your VM manifest
+    targetRevision: HEAD
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: vms-project
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
