@@ -1,17 +1,17 @@
 apiVersion: kubevirt.io/v1
 kind: VirtualMachine
 metadata:
-  name: fedora-coffee-hawk-48
+  name: fedora
   namespace: vms-project
   labels:
-    app: fedora-coffee-hawk-48
+    app: fedora
     kubevirt.io/dynamic-credentials-support: 'true'
 spec:
   dataVolumeTemplates:
     - apiVersion: cdi.kubevirt.io/v1beta1
       kind: DataVolume
       metadata:
-        name: fedora-coffee-hawk-48
+        name: fedora
       spec:
         sourceRef:
           kind: DataSource
@@ -29,7 +29,7 @@ spec:
         vm.kubevirt.io/os: fedora
         vm.kubevirt.io/workload: server
       labels:
-        kubevirt.io/domain: fedora-coffee-hawk-48
+        kubevirt.io/domain: fedora
         kubevirt.io/size: small
         network.kubevirt.io/headlessService: headless
     spec:
@@ -70,7 +70,7 @@ spec:
       terminationGracePeriodSeconds: 180
       volumes:
         - dataVolume:
-            name: fedora-coffee-hawk-48
+            name: fedora
           name: rootdisk
         - cloudInitNoCloud:
             userData: |-
