@@ -1,10 +1,10 @@
 apiVersion: kubevirt.io/v1
 kind: VirtualMachine
 metadata:
-  name: fedora
+  name: fedora12
   namespace: vms-project
   labels:
-    app: fedora
+    app: fedora12
     kubevirt.io/dynamic-credentials-support: 'true'
 spec:
   dataVolumeTemplates:
