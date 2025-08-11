@@ -84,8 +84,7 @@ metadata:
       operation: Update
       time: '2025-08-11T09:29:45Z'
   name: centos-stream9
-  namespace: vms-project
-  uid: ae0ed1ea-2c86-49b0-b2d2-4f586c8638e9
+  namespace: vms-project  
 spec:
   dataVolumeTemplates:
     - apiVersion: cdi.kubevirt.io/v1beta1
