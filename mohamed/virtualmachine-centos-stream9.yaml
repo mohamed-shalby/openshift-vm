@@ -2,7 +2,6 @@ apiVersion: kubevirt.io/v1
 kind: VirtualMachine
 metadata:
   annotations:
-    kubemacpool.io/transaction-timestamp: '2025-08-11T09:26:31.350938278Z'
     vm.kubevirt.io/validations: |
       [
         {
@@ -13,7 +12,6 @@ metadata:
           "min": 1610612736
         }
       ]
-  creationTimestamp: '2025-08-11T09:26:31Z'
   generation: 1
   labels:
     app: centos-stream9-indigo-hoverfly-36
@@ -87,8 +85,7 @@ metadata:
       operation: Update
   name: centos-stream9
   namespace: vms-project
-  uid: 6e2f51d4-116a-43c3-934f-153659830575
-spec:
+  spec:
   dataVolumeTemplates:
     - apiVersion: cdi.kubevirt.io/v1beta1
       kind: DataVolume
